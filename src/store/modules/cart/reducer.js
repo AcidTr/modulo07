@@ -13,17 +13,8 @@ export default function cart(state = [], action) {
         draft recebe o estado e pode fazer 'rascunhos' para alterar o estado
       */
       return produce(state, draft => {
-        const productIndex = draft.findIndex(
-          product => product.id === action.product.id
-        );
-        if (productIndex >= 0) {
-          draft[productIndex].amount += 1;
-        } else {
-          draft.push({
-            ...action.product,
-            amount: 1,
-          });
-        }
+        const { product } = action;
+        draft.push(product);
       });
     case '@cart/REMOVE':
       return produce(state, draft => {
