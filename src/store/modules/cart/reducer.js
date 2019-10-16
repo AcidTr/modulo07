@@ -7,7 +7,7 @@ export default function cart(state = [], action) {
     Caso contrário, retorna o estado do jeito que estava.
   */
   switch (action.type) {
-    case 'ADD_TO_CART':
+    case '@cart/ADD':
       /*
         O immer permite manipular o array como se fosse imutável
         draft recebe o estado e pode fazer 'rascunhos' para alterar o estado
@@ -25,7 +25,7 @@ export default function cart(state = [], action) {
           });
         }
       });
-    case 'REMOVE_FROM_CART':
+    case '@cart/REMOVE':
       return produce(state, draft => {
         const productIndex = draft.findIndex(
           product => product.id === action.id
