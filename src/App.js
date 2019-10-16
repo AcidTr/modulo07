@@ -8,6 +8,11 @@ import Routes from './routes';
 
 import store from './store';
 
+/*
+  Provider permite que o store(estado global
+  disponível para todos os componentes
+*/
+
 function App() {
   return (
     <Provider store={store}>
