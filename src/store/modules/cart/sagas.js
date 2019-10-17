@@ -36,7 +36,7 @@ function* addToCart({ id }) {
       priceFormatted: formatPrice(response.data.price),
     };
     yield put(addToCartSuccess(data));
-    history.push('/cart');
+    // history.push('/cart');
   }
 }
 function* updateAmount({ id, amount }) {
